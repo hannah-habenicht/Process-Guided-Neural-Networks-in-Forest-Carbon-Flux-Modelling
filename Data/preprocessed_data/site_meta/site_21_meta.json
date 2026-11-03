@@ -1,0 +1,22 @@
+{
+  "site_id": 21,
+  "species": "Fagus sylvatica",
+  "is_conifer": false,
+  "lai_median": 4.699999999999999,
+  "ThetaFC": 0.3,
+  "ThetaPWP": 0.15,
+  "soildepth": 1000.0,
+  "CWmax": 1.88,
+  "SWinit_prior": 260.6041666666667,
+  "description": {
+    "site_id": 21,
+    "site_name": "soro",
+    "latitude": 55.485844,
+    "longitude": 11.644616,
+    "elevation_masl": 40.0,
+    "natVegetation_code1": "F.5.2.1",
+    "description_raw": "The ICOS site Sor\u00f8 (DK-Sor in the FLUXNET and ICOS data bases) is located in Denmark at an elevation of 40 m.a.s.l.. The climate is warm temperate and fully humid with a mean annual temperature of 9\u00b0C and annual precipitation sum of 774 mm during the period 1996-2010. The soil has been classified as an Alfisols/Molisols. Potential natural vegetation is deciduous broad-leaved forest dominated by Fagus sylvatica. Other species occurring in the area are Fraxinus excelsior, Larix decidua, Picea abies, Quercus spp., Acer spp. However, the region is mostly used as cropland. Data on tree DBH are reconstructed from tree ring measurement (Babst et al. 2014) and historical management information for the time period from 1994 to 2017. The mean DBH of this Fagus sylvatica stand was 41 cm in the year 2017. More information about the site can be found in Ladekarl (2001), Pilegaard et al. (2003, 2011), and Wu et al. (2013).",
+    "description": "soro | 40 m a.s.l. | 55.4858, 11.6446 | Nat. veg: F.5.2.1 | The ICOS site Sor\u00f8 (DK-Sor in the FLUXNET and ICOS data bases) is located in Denmark at an elevation of 40 m.a.s.l.. The climate is warm temperate and fully humid with a mean annual temperature of 9\u00b0C and annual precipitation sum of 774 mm during the period 1996-2010. The soil has been classified as an Alfisols/Molisols. Potential natural vegetation is deciduous broad-leaved forest dominated by Fagus sylvatica. Other species occurring in the area are Fraxinus excelsior, Larix decidua, Picea abies, Quercus spp., Acer spp. However, the region is mostly used as cropland. Data on tree DBH are reconstructed from tree ring measurement (Babst et al. 2014) and historical management information for the time period from 1994 to 2017. The mean DBH of this Fagus sylvatica stand was 41 cm in the year 2017. More information about the site can be found in Ladekarl (2001), Pilegaard et al. (2003, 2011), and Wu et al. (2013)."
+  },
+  "SWinit_method": "overall_median_measured_pct"
+}

@@ -1,0 +1,22 @@
+{
+  "site_id": 12,
+  "species": "Pinus sylvestris",
+  "is_conifer": true,
+  "lai_median": 0.9,
+  "ThetaFC": 0.45,
+  "ThetaPWP": 0.118,
+  "soildepth": 890.0,
+  "CWmax": 0.63,
+  "SWinit_prior": 234.7019,
+  "description": {
+    "site_id": 12,
+    "site_name": "hyytiala",
+    "latitude": 61.84742,
+    "longitude": 24.29477,
+    "elevation_masl": 185.0,
+    "natVegetation_code1": "D.1.3",
+    "description_raw": "The most northern site included in the PROFOUND DB is the ICP Forests Level II site Hyyti\u00e4l\u00e4, Finland. It is also a Fluxnet site and the coldest site with an annual temperature of 4.4\u00b0C and 604 mm annual precipitation during the 1996-2014 period and lies at 185 m.a.s.l. The soil is classified as a Haplic Podzol. Picea abies is the naturally dominant tree species building Fennoscandian moss-rich spruce forests with Pinus sylvestris. A Pinus sylvestris stand was sown in 1962, today with admixtures of Picea abies and hardwood species (Betula pendula, Betula pubescens and Populus tremula). Mean DBH were 17 cm for P. sylvestris, 5 cm for P. abies and 7 cm for hardwood species in the year 2008. More information about the site can be found in Haataja & Vesala (1997), Rannik et al. (2004), Vesala et al. (2005), Ilvesniemi et al. (2009), Mammarella et al. (2009) and Ilvesniemi et al. (2010).",
+    "description": "hyytiala | 185 m a.s.l. | 61.8474, 24.2948 | Nat. veg: D.1.3 | The most northern site included in the PROFOUND DB is the ICP Forests Level II site Hyyti\u00e4l\u00e4, Finland. It is also a Fluxnet site and the coldest site with an annual temperature of 4.4\u00b0C and 604 mm annual precipitation during the 1996-2014 period and lies at 185 m.a.s.l. The soil is classified as a Haplic Podzol. Picea abies is the naturally dominant tree species building Fennoscandian moss-rich spruce forests with Pinus sylvestris. A Pinus sylvestris stand was sown in 1962, today with admixtures of Picea abies and hardwood species (Betula pendula, Betula pubescens and Populus tremula). Mean DBH were 17 cm for P. sylvestris, 5 cm for P. abies and 7 cm for hardwood species in the year 2008. More information about the site can be found in Haataja & Vesala (1997), Rannik et al. (2004), Vesala et al. (2005), Ilvesniemi et al. (2009), Mammarella et al. (2009) and Ilvesniemi et al. (2010)."
+  },
+  "SWinit_method": "overall_median_measured_pct"
+}

@@ -1,0 +1,412 @@
+{
+    "num_trainable_experts": 2,
+    "hard_expert_id": 1,
+    "top_k": 2,
+    "warmup_steps": 2000,
+    "ramp_steps": [
+        2000
+    ],
+    "noise_steps": [
+        3000
+    ],
+    "alpha_entropy": 0.001,
+    "model::modeltype": "MLP",
+    "model::layer_number": 4,
+    "model::input_size": 5,
+    "model::output_size": 2,
+    "model::hidden_size": [
+        5,
+        10,
+        28
+    ],
+    "model::activation": [
+        "Relu",
+        "Relu",
+        "Relu",
+        null
+    ],
+    "model::dropout_list": 0.2,
+    "model::bias_list": [
+        true,
+        true,
+        true,
+        true
+    ],
+    "model::save_path": null,
+    "model::seed": 42,
+    "training::cuda": true,
+    "training::learning_rate": 0.0003,
+    "training::momentum": 0,
+    "training::weight_decay": 0,
+    "training::dampening": 0,
+    "training::beta_1": 0.9,
+    "training::beta_2": 0.999,
+    "training::optimizer": "AdamW",
+    "training::loss_type": "MSE",
+    "training::physical_loss_regul_term": 0.2,
+    "training::epochs": 100,
+    "training::seed": 42,
+    "training::acc_metric": "MAE",
+    "training::batchsize": 16,
+    "data::test::batchsize": 16,
+    "model::prediction_type": "spatial",
+    "training::loss_physic_type": "parallel",
+    "data::normalise": "z-score",
+    "data::error_norm": false,
+    "data::past-include": false,
+    "model::prediction_temporal:include_Y_past": false,
+    "data:train:sparse": 50,
+    "data:test:sparse": null,
+    "data::previously_calibrated": false,
+    "data::train::station_id": {
+        "21": {
+            "startdate": [
+                [
+                    2002,
+                    1,
+                    1
+                ]
+            ],
+            "stopdate": [
+                [
+                    2004,
+                    12,
+                    31
+                ]
+            ]
+        }
+    },
+    "data::test::station_id": {
+        "5": {
+            "startdate": [
+                [
+                    2004,
+                    1,
+                    1
+                ]
+            ],
+            "stopdate": [
+                [
+                    2005,
+                    12,
+                    31
+                ]
+            ]
+        }
+    },
+    "model::windows_input": null,
+    "model::windows_output": null,
+    "data::train::x_parameter": [
+        "Precip",
+        "Tair",
+        "PAR",
+        "VPD",
+        "fapar"
+    ],
+    "data::train::y_parameter": [
+        "GPP",
+        "ET"
+    ],
+    "data::test::x_parameter": [
+        "Precip",
+        "Tair",
+        "PAR",
+        "VPD",
+        "fapar"
+    ],
+    "data::test::y_parameter": [
+        "GPP",
+        "ET"
+    ],
+    "Preles::x_para": [
+        "PAR",
+        "Tair",
+        "VPD",
+        "Precip",
+        "fapar",
+        "CO2",
+        "DOY"
+    ],
+    "Preles::y_para": [
+        "GPP",
+        "ET"
+    ],
+    "Preles::y_phy_para": [
+        "GPP_pred",
+        "ET_pred"
+    ],
+    "Preles::call:in": {
+        "soildepth": 413,
+        "ThetaFC": 0.45,
+        "ThetaPWP": 0.118,
+        "tauDrainage": 3,
+        "beta": 0.7457,
+        "tau": 10.93,
+        "S0": -3.063,
+        "Smax": 17.72,
+        "kappa": -0.1027,
+        "gamma": 0.03673,
+        "soilthres": 0.7779,
+        "bCO2": 0.5,
+        "xCO2": -0.364,
+        "ETbeta": 0.2715,
+        "ETkappa": 0.8351,
+        "ETchi": 0.07348,
+        "ETsoilthres": 0.9996,
+        "ETnu": 0.4428,
+        "MeltCoef": 1.2,
+        "I0": 0.33,
+        "CWmax": 4.970496,
+        "SnowThreshold": 0.0,
+        "T_0": 0.0,
+        "SWinit": 160.0,
+        "CWinit": 0.0,
+        "SOGinit": 0.0,
+        "Sinit": 0.0,
+        "t0": -999.0,
+        "tcrit": -999.0,
+        "tsumcrit": -999.0,
+        "GPPmeas": -999.0,
+        "ETmeas": -999.0,
+        "SWmeas": -999.0,
+        "transp": -999.0,
+        "evap": -999.0,
+        "fWE": -999.0
+    },
+    "Preles::parameters:to:tune": {
+        "soildepth": {
+            "value": 413,
+            "min": 100,
+            "max": 1300
+        },
+        "tauDrainage": {
+            "value": 3,
+            "min": 3,
+            "max": 20
+        },
+        "beta": {
+            "value": 0.748018,
+            "min": 0.2,
+            "max": 2.5
+        },
+        "tau": {
+            "value": 13.23383,
+            "min": 1,
+            "max": 35
+        },
+        "S0": {
+            "value": -3.9657867,
+            "min": -30,
+            "max": 30.1
+        },
+        "Smax": {
+            "value": 18.76696,
+            "min": 2.3,
+            "max": 45
+        },
+        "kappa": {
+            "value": -0.130473,
+            "min": -1,
+            "max": -0.001
+        },
+        "gamma": {
+            "value": 0.034459,
+            "min": 1e-05,
+            "max": 0.503
+        },
+        "soilthres": {
+            "value": 0.7779,
+            "min": 0,
+            "max": 1
+        },
+        "ETbeta": {
+            "value": 0.2715,
+            "min": 1e-06,
+            "max": 10
+        },
+        "ETkappa": {
+            "value": 0.8351,
+            "min": 0.0001,
+            "max": 2
+        },
+        "ETchi": {
+            "value": 0.07348,
+            "min": 0,
+            "max": 2.5
+        },
+        "ETsoilthres": {
+            "value": 0.9996,
+            "min": 0,
+            "max": 0.9999
+        },
+        "ETnu": {
+            "value": 0.4428,
+            "min": 0.0001,
+            "max": 7.5
+        }
+    },
+    "Preles::out": {
+        "GPP": 0.0,
+        "ET": 0.0,
+        "SW": 0.0,
+        "SOG": 0.0,
+        "fS": 0,
+        "fD": 0.0,
+        "fW": 0.0,
+        "fE": 0.0,
+        "Throughfall": 0.0,
+        "Interception": 0,
+        "Snowmelt": 0,
+        "Drainage": 0,
+        "Canopywater": 0,
+        "S": 0
+    },
+    "Preles::control_arg": {
+        "LOGFLAG": 0,
+        "etmodel": 0,
+        "NofDays": 1
+    },
+    "Preles::preintialised_output": {
+        "SW": 0,
+        "SOG": 0,
+        "fS": 0,
+        "fD": 0,
+        "fW": 0,
+        "fE": 0.0,
+        "Throughfall": 0.0,
+        "Interception": 0,
+        "Snowmelt": 0.0,
+        "Drainage": 0,
+        "Canopywater": 0.0,
+        "S": 0.0
+    },
+    "Preles::possible_preles_keys": {
+        "PAR": "PAR",
+        "TAir": "TAir",
+        "VPD": "VPD",
+        "Precip": "Precip",
+        "CO2": "CO2",
+        "fAPAR": "fAPAR",
+        "GPPmeas": "GPPmeas",
+        "ETmeas": "ETmeas",
+        "SWmeas": "SWmeas",
+        "GPP": "GPP",
+        "ET": "ET",
+        "SW": "SW",
+        "SOG": "SOG",
+        "fS": "fS",
+        "fD": "fD",
+        "fW": "fW",
+        "fE": "fE",
+        "Throughfall": "Throughfall",
+        "Interception": "Interception",
+        "Snowmelt": "Snowmelt",
+        "Drainage": "Drainage",
+        "Canopywater": "Canopywater",
+        "S": "S",
+        "soildepth": "p1",
+        "ThetaFC": "p2",
+        "ThetaPWP": "p3",
+        "tauDrainage": "p4",
+        "beta": "p5",
+        "tau": "p6",
+        "S0": "p7",
+        "Smax": "p8",
+        "kappa": "p9",
+        "gamma": "p10",
+        "soilthres": "p11",
+        "bCO2": "p12",
+        "xCO2": "p13",
+        "ETbeta": "p14",
+        "ETkappa": "p15",
+        "ETchi": "p16",
+        "ETsoilthres": "p17",
+        "ETnu": "p18",
+        "MeltCoef": "p19",
+        "I0": "p20",
+        "CWmax": "p21",
+        "SnowThreshold": "p22",
+        "T_0": "p23",
+        "SWinit": "p24",
+        "CWinit": "p25",
+        "SOGinit": "p26",
+        "Sinit": "p27",
+        "t0": "p28",
+        "tcrit": "p29",
+        "tsumcrit": "p30",
+        "etmodel": "control",
+        "LOGFLAG": "logflag",
+        "NofDays": "NofDays",
+        "day": "DOY",
+        "transp": "transp",
+        "evap": "evap",
+        "fWE": "fWE"
+    },
+    "Preles::parameter_order": [
+        "PAR",
+        "Tair",
+        "VPD",
+        "Precip",
+        "CO2",
+        "fapar",
+        "GPPmeas",
+        "ETmeas",
+        "SWmeas",
+        "GPP",
+        "ET",
+        "SW",
+        "SOG",
+        "fS",
+        "fD",
+        "fW",
+        "fE",
+        "Throughfall",
+        "Interception",
+        "Snowmelt",
+        "Drainage",
+        "Canopywater",
+        "S",
+        "soildepth",
+        "ThetaFC",
+        "ThetaPWP",
+        "tauDrainage",
+        "beta",
+        "tau",
+        "S0",
+        "Smax",
+        "kappa",
+        "gamma",
+        "soilthres",
+        "bCO2",
+        "xCO2",
+        "ETbeta",
+        "ETkappa",
+        "ETchi",
+        "ETsoilthres",
+        "ETnu",
+        "MeltCoef",
+        "I0",
+        "CWmax",
+        "SnowThreshold",
+        "T_0",
+        "SWinit",
+        "CWinit",
+        "SOGinit",
+        "Sinit",
+        "t0",
+        "tcrit",
+        "tsumcrit",
+        "etmodel",
+        "LOGFLAG",
+        "NofDays",
+        "DOY",
+        "transp",
+        "evap",
+        "fWE"
+    ],
+    "checkpoint::window_size": 10,
+    "cfg::save": "",
+    "checkpoint::path_dir": "checkpoints",
+    "data::train::path_dir": "Data",
+    "data::test::path_dir": "Data"
+}

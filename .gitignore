@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+archiv/
+checkpoints/
+logs/
+results/
+logs/
+.vscode/
+Model_weights_spatial_len12/
+Data/preprocessed_data
+PM_Extension/ADBASFOR
+PM_Extension/CARDAMOM
+Config_Files/_pycache_/
+Config_Files/config_dag_masked.py
+Config_Files/basfor_configs.py.bak
+*.bak
+*.so
+*.pyc
+

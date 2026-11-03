@@ -1,0 +1,26 @@
+# Python version (for reference, not enforced by pip)
+numpy==2.3.5
+matplotlib==3.10.8
+pandas==2.3.3
+seaborn==0.13.2
+scikit-learn==1.8.0
+scipy==1.16.3
+joblib==1.5.3
+tqdm==4.67.1
+statsmodels==0.14.6
+optuna==4.6.0
+cmaes==0.12.0
+pyale==1.2.0
+python-dotenv==1.2.1
+wandb==0.25.0
+openpyxl==3.1.5
+pybind11==3.0.1
+torch==2.9.1
+torchvision==0.24.1
+filelock==3.20.0
+sqlalchemy==2.0.45
+alembic==1.17.2
+ipykernel==7.2.0
+
+# NOTE: `preles_c` (required) and `preles` (optional torch rewrite) are local C/C++
+# extensions; build them after installing these requirements (see README, section 2).

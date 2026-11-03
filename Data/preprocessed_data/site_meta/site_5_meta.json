@@ -1,0 +1,22 @@
+{
+  "site_id": 5,
+  "species": "Fagus sylvatica",
+  "is_conifer": false,
+  "lai_median": 0.8500000000000001,
+  "ThetaFC": 0.5785893969939999,
+  "ThetaPWP": 0.3292754047435,
+  "soildepth": 800.0,
+  "CWmax": 0.3400000000000001,
+  "SWinit_prior": 339.0423333333333,
+  "description": {
+    "site_id": 5,
+    "site_name": "collelongo",
+    "latitude": 41.849336,
+    "longitude": 13.588217,
+    "elevation_masl": 1560.0,
+    "natVegetation_code1": "F.5.2.3",
+    "description_raw": "The experimental site of Collelongo is located in Selva Piana, a pure Fagus sylvatica forest in Collelongo (AQ, central Italy) at 1560 m.a.s.l. Located 100 km from Rome, it is one of the first Italian sites of the ICP network and also part of the ILTER international network. The climate is Mediterranean montane, with a mean annual temperature of 7.2\u00b0C and a mean annual precipitation of 1179 mm in the period 1996-2014. Bedrock consists of cretaceous limestone. Soil depth exhibits high spatial variability ranging from 40 to 100 cm and is classified as a Humic Alisol (Chiti et al. 2010) or Dystric Luvisol according to the FAO classification. The stand is a typical Apennine beech forests dominated by Fagus sylvatica with sporadic trees of Taxus baccata. The phytosociological association is Polysticho \u2013 Fagetum (Feoli & Lagonegro 1982). Currently, Collelongo constitutes a managed Fagus sylvatica stand with mean DBH of 25 cm in 2012. In the area around the eddy-flux tower there are only Fagus sylvatica trees. Moreover the footprint of the tower is totally included in the Fagus sylvatica forest. More information about the site can be found in Chiti et al. (2010) and Collalti et al. (2016). ",
+    "description": "collelongo | 1560 m a.s.l. | 41.8493, 13.5882 | Nat. veg: F.5.2.3 | The experimental site of Collelongo is located in Selva Piana, a pure Fagus sylvatica forest in Collelongo (AQ, central Italy) at 1560 m.a.s.l. Located 100 km from Rome, it is one of the first Italian sites of the ICP network and also part of the ILTER international network. The climate is Mediterranean montane, with a mean annual temperature of 7.2\u00b0C and a mean annual precipitation of 1179 mm in the period 1996-2014. Bedrock consists of cretaceous limestone. Soil depth exhibits high spatial variability ranging from 40 to 100 cm and is classified as a Humic Alisol (Chiti et al. 2010) or Dystric Luvisol according to the FAO classification. The stand is a typical Apennine beech forests dominated by Fagus sylvatica with sporadic trees of Taxus baccata. The phytosociological association is Polysticho \u2013 Fagetum (Feoli & Lagonegro 1982). Currently, Collelongo constitutes a managed Fagus sylvatica stand with mean DBH of 25 cm in 2012. In the area around the eddy-flux tower there are only Fagus sylvatica trees. Moreover the footprint of the tower is totally included in the Fagus sylvatica forest. More information about the site can be found in Chiti et al. (2010) and Collalti et al. (2016). "
+  },
+  "SWinit_method": "overall_median_measured_pct"
+}

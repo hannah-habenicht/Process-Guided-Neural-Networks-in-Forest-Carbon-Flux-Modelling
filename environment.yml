@@ -1,0 +1,57 @@
+name: bo2-pgnn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      # --- PyTorch build selection ---
+      # By default this installs the CPU-only PyTorch wheel. The plain PyPI `torch`
+      # wheel on Linux is the CUDA build, which bundles several GB of NVIDIA libraries;
+      # on a machine without a working GPU that only makes `import torch` slow (and can
+      # hang on CUDA init). Inference in this project (e.g. Load_and_test_model.ipynb)
+      # runs fine on CPU.
+      #
+      # >>> If you want to TRAIN your own models, use a GPU instead: <<<
+      #   1. Comment out the `--extra-index-url .../whl/cpu` line below.
+      #   2. Ensure the host has a working NVIDIA GPU + driver (verify with `nvidia-smi`).
+      #   3. Recreate the env so `torch`/`torchvision` resolve to the default CUDA wheel.
+      #      (Match the CUDA build to your driver, e.g. .../whl/cu126 for CUDA 12.6.)
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      # Core numerics/data
+      - numpy==2.3.5
+      - pandas==2.3.3
+      - scipy==1.16.3
+      - scikit-learn==1.8.0
+      - joblib==1.5.3
+      - tqdm==4.67.1
+
+      # Modeling
+      - torch==2.9.1
+      - torchvision==0.24.1
+
+      # Analysis/plotting
+      - matplotlib==3.10.8
+      - seaborn==0.13.2
+      - statsmodels==0.14.6
+      - pyale==1.2.0
+
+      # Optimization/training tooling
+      - optuna==4.6.0
+      - cmaes==0.12.0
+      - sqlalchemy==2.0.45
+      - alembic==1.17.2
+      - filelock==3.20.0
+      - python-dotenv==1.2.1
+      - wandb==0.25.0
+      - openpyxl==3.1.5
+
+      # Build dependency for the preles_c extension
+      - pybind11==3.0.1
+
+      # Notebook support
+      - ipykernel==7.2.0
+
+      # NOTE:
+      # `preles_c` (required) and `preles` (optional torch rewrite) are local C/C++
+      # extensions; build them after creating the env (see README, section 2).

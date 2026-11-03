@@ -1,0 +1,38 @@
+{
+  "artifact_namespace": "",
+  "calibration_mode": "force_calibrate",
+  "created_at": "2026-09-18T13:34:22.806812+00:00",
+  "cv_type": "spatial",
+  "n_trials_in_study": 800,
+  "n_trials_requested": 800,
+  "objective": "MSE",
+  "prediction_type": "spatial",
+  "process_model": "preles",
+  "schema_version": 1,
+  "seed": 42,
+  "sparse": "full",
+  "split_signature": "14_2007-2008__21_2003-2004",
+  "test_station_id": {
+    "5": [
+      2012,
+      2013
+    ]
+  },
+  "train_station_id": {
+    "14": [
+      2007,
+      2008
+    ],
+    "21": [
+      2003,
+      2004
+    ]
+  },
+  "val_station_id": {
+    "5": [
+      2011,
+      2007
+    ]
+  },
+  "warm_start_source": "forced"
+}
