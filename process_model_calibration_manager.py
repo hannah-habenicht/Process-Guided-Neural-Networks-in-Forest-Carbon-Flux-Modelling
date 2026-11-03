@@ -834,7 +834,6 @@ if __name__ == "__main__":
     parser.add_argument("--shuffle-train", action="store_true",     help="Shuffle training DataLoader in --as-dataloaders mode.")
     parser.add_argument("--sparse", type=int, default=None,         help="Optional sparse stride for dataloader handoff (e.g. 7 keeps every 7th row).")
     parser.add_argument("--no-plot", action="store_true",           help="Disable plotting in DataFrame mode.")
-    parser.add_argument("--flue-csv", type=str, default=None, dest="flue_csv", help="Path to flue_stocker18nphyt.csv; when set, FLUE drought periods are shaded on BASFOR plots.")
     parser.add_argument("--debug", action="store_true",             help="Enable manager debug logging.")
     parser.add_argument("--calibration-artifact", type=str, default=None, dest="calibration_artifact", help="Calibration artifact namespace.")
     parser.add_argument("--experiment-artifact",  type=str, default=None, dest="experiment_artifact",  help="Experiment artifact namespace.")
@@ -844,21 +843,19 @@ if __name__ == "__main__":
     IDE_SETTINGS = {
         "enabled": True,
         "config": None,             # e.g. "configs/frozen_config.json"
-        "cv_config": 'configs/CV_splits/CV_dfb_module_misspec_mixed_train_6folds_config_v2.json', #
-        "outer_fold": None, #"outer_fold_DE-Tha_deciduous-module", #"outer_station_FR-LBr", #'outer_fold_Cfb-mixed', #
-        "inner_loop": "inner_loop_3",         # inner_loop
-        "process_model": "basfor",
+        "cv_config": "configs/CV_splits/Paper_1_preles_ncvs/CV_station_len3_config.json",
+        "outer_fold": None,
+        "inner_loop": None,
+        "process_model": "preles",
         "calibrate": "require_existing",            # auto | defaults | force_calibrate | require_existing
         "as_dataloaders": False,
         "shuffle_train": False,
         "sparse": None,                             # 7, 30, 50
-        "no_plot": False,
-        "flue_csv": None, #"Data/flue_stocker18nphyt.csv",
+        "no_plot": True,
         "debug": False,
         "loop_all_folds": True,         # when True and outer_fold is None, iterate all outer folds
-        # Artifact namespaces for local testing (leave as None to use cluster defaults)
-        "experiment_artifact_namespace": None,                      #"additional_inputs_v1",  # e.g., "local_test_v1" or "debug"
-        "calibration_artifact_namespace": None, #"misspec_pure_tpe_base", #"misspec_pure_tpe_base",  # e.g., "local_test_v1" or "debug"
+        "experiment_artifact_namespace": None,
+        "calibration_artifact_namespace": None,
     }
 
 
@@ -875,7 +872,6 @@ if __name__ == "__main__":
         args.shuffle_train = IDE_SETTINGS["shuffle_train"]
         args.sparse = IDE_SETTINGS["sparse"]
         args.no_plot = IDE_SETTINGS["no_plot"]
-        args.flue_csv = IDE_SETTINGS.get("flue_csv")
         args.debug = IDE_SETTINGS["debug"]
         args.experiment_artifact = IDE_SETTINGS["experiment_artifact_namespace"]
         args.calibration_artifact = IDE_SETTINGS["calibration_artifact_namespace"]

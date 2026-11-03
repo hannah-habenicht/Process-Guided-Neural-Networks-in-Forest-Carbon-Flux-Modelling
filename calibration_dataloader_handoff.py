@@ -562,7 +562,7 @@ if __name__ == "__main__":
     parser.add_argument("--cv-config",      type=str, default=None, help="Optional CV split JSON path.")
     parser.add_argument("--outer-fold",     type=str, default=None, help="Outer fold key.")
     parser.add_argument("--inner-loop",     type=str, default=None, help="Inner loop key.")
-    parser.add_argument("--process-model",  type=str, default="preles", choices=["preles", "basfor"])
+    parser.add_argument("--process-model",  type=str, default="preles", choices=["preles"])
     parser.add_argument("--calibrate",      type=str, default="defaults", choices=["auto", "defaults", "force_calibrate"])
     parser.add_argument("--shuffle-train", action="store_true", help="Shuffle training DataLoader.")
     parser.add_argument("--sparse", type=int, default=None, help="Optional sparse stride for handoff dataloaders.")

@@ -141,10 +141,16 @@ Outputs go to `checkpoints/preles/<full|sparseN>/<experiment>/logs_spatial_<mode
 - `XAI/`: ALE utilities
 - `batch_scripts/`: SLURM scripts
 
+Only PRELES is included and supported here. Some modules keep unused hooks for other process models (e.g. BASFOR).
+
 ## 7) Citation
 
 This code accompanies the manuscript above. If you use it, please cite the paper and the PRELES sources.
 
 ## 8) License
 
-The code may be used for scientific purposes; any other use must credit the authors. See `LICENSE`, which also lists the parts it does not cover (PRELES source, station data).
+The code is released under the MIT License (see `LICENSE`). If you use it, please cite the paper (section 7).
+
+Not covered by this license:
+- The PRELES source and its rewrite in `PM_Extension/`, which keep their own terms (for the rewrite, see `PM_Extension/PRELES_rewrite/README.md`).
+- The station data in `Data/preprocessed_data/`, which derive from openly available third-party datasets and remain under the terms of those sources.
