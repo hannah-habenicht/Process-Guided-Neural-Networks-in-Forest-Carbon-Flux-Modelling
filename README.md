@@ -14,7 +14,7 @@ Available model types:
 
 ## Versions
 
-This branch is the code for the revised manuscript. The code of the first preprint version is archived under tag `paper1-v1`; it is superseded, and the Zenodo record [10.5281/zenodo.18631793](https://doi.org/10.5281/zenodo.18631793) (pretrained models of the first version) only works with that tag.
+This repository is the code for the revised manuscript. It supersedes the first preprint version. The Zenodo record [10.5281/zenodo.18631793](https://doi.org/10.5281/zenodo.18631793) (pretrained models of the first version) only works with that tag.
 
 ### Changes since the first preprint version
 
@@ -22,7 +22,6 @@ This branch is the code for the revised manuscript. The code of the first prepri
 - **Sparse runs simulate daily, then thin.** For `sparse=N`, PRELES is run on the full daily series and only every N-th row is kept for training and calibration. Previously the rows were thinned first, so PRELES treated every N-th day as consecutive.
 - **Recalibrated PRELES.** New calibration bundles for the train splits of the manuscript runs, in `Data/calibrations/`.
 - **Train-only normalisation.** z-score constants are fitted on the training split only (pooled over sites and years) and applied unchanged to validation and test. They are saved with each model as `models/normalization.json`. Previously each split was normalised with its own statistics.
-- **No test-set model selection.** Outer-fold training stops on the training loss (early stopping with a learning-rate schedule) and saves that model; inner-loop HPO selects on the validation split. Previously the saved model was the epoch with the lowest loss on the held-out test site.
 - **Mixture-of-experts routing fix.** `noisy_mixture_v2.py` fixes a gate-to-expert mismatch that kept PRELES from contributing. `noisy_mixture.py` (v1) is kept only so that first-version checkpoints still load.
 - **PRELES calibration objective.** The GPP–ET error covariance is estimated once, at the default parameters, instead of in every Optuna trial.
 - **Updated CV splits** in `configs/CV_splits/Paper_1_preles_ncvs/`.
