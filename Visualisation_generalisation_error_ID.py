@@ -137,6 +137,8 @@ def generate_station_plots(
             plt.tight_layout(pad=3.0)
             fig.subplots_adjust(top=0.85, hspace=0.4, wspace=0.3)
             filename = f'generalization_error_{pred}_{error_type}_station{station}{suffix}.png'
+            if save_dir is not None:
+                fig.savefig(Path(save_dir) / filename, dpi=300, bbox_inches='tight')
             plt.close(fig)
     
             results_per_outer_fold_df = {
@@ -204,11 +206,11 @@ def generate_station_plots(
     plt.tight_layout()
     
     suffix = format_top_suffix(top_k_configs)
-    #plt.show()
     if save_dir is not None:
-        comparison_filename = f'new_generalization_all_models_{error_type}_station{station}{suffix}.png'        
+        comparison_filename = f'new_generalization_all_models_{error_type}_station{station}{suffix}.png'
         save_path = Path(save_dir) / comparison_filename
         plt.savefig(save_path, bbox_inches='tight')
+    plt.show()
     plt.close(fig)
 
     results =[]
@@ -223,9 +225,9 @@ def generate_station_plots(
 
         results.append({
                 "pred_type": pred,
-                "A": f"{np.round(popt[0],2)} $\pm$ {np.round(perr[0],2)}",
-                "alpha": f"{np.round(popt[1],2)} $\pm$ {np.round(perr[1],2)}",
-                "B": f"{np.round(popt[2],2)} $\pm$ {np.round(perr[2],2)}",
+                "A": f"{np.round(popt[0],2)} $\\pm$ {np.round(perr[0],2)}",
+                "alpha": f"{np.round(popt[1],2)} $\\pm$ {np.round(perr[1],2)}",
+                "B": f"{np.round(popt[2],2)} $\\pm$ {np.round(perr[2],2)}",
                 })
         
         ax.errorbar(
@@ -261,12 +263,12 @@ def generate_station_plots(
         plt.tight_layout()
 
         if save_dir is not None:
-            comparison_filename = f'generalization_all_models_{error_type}_station{station}{suffix}.pdf'
+            comparison_filename = f'generalization_{pred}_{error_type}_station{station}{suffix}.pdf'
             save_path = Path(save_dir) / comparison_filename
             plt.savefig(save_path, bbox_inches='tight')
             df = pd.DataFrame(results)
             csv_filename = f"fitted_parameters_{station_label}.csv"
-            df.to_csv(csv_filename, index=False)
+            df.to_csv(Path(save_dir) / csv_filename, index=False)
         plt.close(fig)
    
     print(f'Completed {station_label}')
@@ -313,8 +315,9 @@ def plot_coefficent_of_variation(errors, pred_types, error_type, color_map,stati
     plt.figure(figsize=(15, 12))
     ax= sns.violinplot(data=df, 
                        x="Model", 
-                       y="RSD", 
-                       inner="quart",palette={k.lower():v for k,v in color_map.items()}, 
+                       y="RSD",
+                       hue="Model", legend=False,
+                       inner="quart",palette={k.lower():v for k,v in color_map.items()},
                    alpha=0.7, density_norm="count", linewidth=3, bw_adjust=0.8, cut=0)
 
     #add star to process model
@@ -339,10 +342,10 @@ def plot_coefficent_of_variation(errors, pred_types, error_type, color_map,stati
     plt.grid()
    
     plt.tight_layout()
-    plt.show()
     if save_dir is not None:
         save_path = Path(save_dir) / f'RSD_violin_station_{station}.pdf'
         plt.savefig(save_path, bbox_inches='tight')
+    plt.show()
     plt.close()
 
     return
@@ -354,7 +357,7 @@ if __name__ == "__main__":
         5: [1, 2, 3, 5],
         12: [1, 2, 3],
     }
-    pred_types = ['naive', 'regularized', 'residual','bias', 'parallel', 'Mixture'] # 
+    pred_types = ['naive', 'regularized', 'residual','bias', 'parallel', 'mixture'] # 
     error_type = 'test_mse'
     sparse = [50, 30, 7]
     sparse_year = 1

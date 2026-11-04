@@ -123,9 +123,9 @@ def generate_spatial_plots(
                 
                 results.append({
                 "pred_type": pred,
-                "A": f"{np.round(popt[0],2)} $\pm$ {np.round(perr[0],2)}",
-                "alpha": f"{np.round(popt[1],2)} $\pm$ {np.round(perr[1],2)}",
-                "B": f"{np.round(popt[2],2)} $\pm$ {np.round(perr[2],2)}"
+                "A": f"{np.round(popt[0],2)} $\\pm$ {np.round(perr[0],2)}",
+                "alpha": f"{np.round(popt[1],2)} $\\pm$ {np.round(perr[1],2)}",
+                "B": f"{np.round(popt[2],2)} $\\pm$ {np.round(perr[2],2)}"
                 })
 
                 color = color_map[pred]
@@ -287,9 +287,9 @@ def generate_spatial_plots(
                 alpha=0.2,)
         results.append({
         "pred_type": pred,
-        "A": f"{np.round(popt[0],3)} $\pm$ {np.round(perr[0],3)}",
-        "alpha": f"{np.round(popt[1],3)} $\pm$ {np.round(perr[1],3)}",
-        "B": f"{np.round(popt[2],3)} $\pm$ {np.round(perr[2],3)}"
+        "A": f"{np.round(popt[0],3)} $\\pm$ {np.round(perr[0],3)}",
+        "alpha": f"{np.round(popt[1],3)} $\\pm$ {np.round(perr[1],3)}",
+        "B": f"{np.round(popt[2],3)} $\\pm$ {np.round(perr[2],3)}"
         })   
     ax.set_xlabel("Training Set Size [Days] in log scale", fontsize=24)
     ax.set_xscale("log")
@@ -401,7 +401,7 @@ def plot_coefficent_of_variation(errors, pred_types, error_type, color_map, save
     "RSD": np.concatenate(coef_var)
     })
     plt.figure(figsize=(15, 15))
-    ax=sns.violinplot(data=df, x="Model", y="RSD", inner="quart", 
+    ax=sns.violinplot(data=df, x="Model", y="RSD", hue="Model", legend=False, inner="quart",
                       palette={k.lower():v for k,v in color_map.items()}, 
                    alpha=0.7, density_norm="count", linewidth=2, bw_adjust=0.8, cut=0)
      #add star to process model
@@ -436,7 +436,7 @@ def plot_coefficent_of_variation(errors, pred_types, error_type, color_map, save
 if __name__ == "__main__":
     lengths = (3, 6, 9, 12)
     sparse = [50, 30,7]
-    pred_types = ['naive', 'regularized', 'residual','bias', 'parallel', 'Mixture', 'process']
+    pred_types = ['naive', 'regularized', 'residual','bias', 'parallel', 'mixture', 'process']
     error_types = ["test_mse"]
     base_dir = os.getcwd()
     base_dir= os.path.join(base_dir, "results/result_sum")  
